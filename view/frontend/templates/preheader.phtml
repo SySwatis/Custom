@@ -1,0 +1,20 @@
+<?php $wrapper = $block->getHtmlTagWrapper() ?>
+<?php if($wrapper) :?>
+<<?= $wrapper ?>>
+<?php endif ?>
+	<div class="preheader">
+		<ul class="hello-store">
+<?php if($block->getPhoneNumber()) :?>
+			<li><span class="phone-number"><?php echo $block->getPhoneNumber() ?></span></li>
+<?php endif ?>
+<?php if($block->getHours()) :?>
+			<li><span class="store-hours"><?php echo $block->getHours() ?></span></li>
+<?php endif ?>
+			<li><span class="contact"><a href="<?php echo $this->getUrl('contact') ?>"><?php echo __('Contact') ?></a></span></li>
+			<li><?php echo $this->getChildHtml('top.flags'); ?></li>
+		</ul>
+	</div>
+<?php if($wrapper) :?>
+</<?= $wrapper ?>>
+<?php endif ?>
+

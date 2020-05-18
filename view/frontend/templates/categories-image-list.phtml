@@ -1,0 +1,16 @@
+<?php if( $block->isCategoryPage() && $block->getCurrentCategoryId() === $block->getCategoryId() ) : ?>
+<?php
+  $categoriesList = $block->getCategories();
+  if(count($categoriesList)) : 
+?>
+<?php 
+    $baseUrl = $block->getStoreManagerData()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_WEB);
+    $blockTitle = $block->getCategoryTitle() ?? $block->getCategoryTitle();
+?>
+    <ul class="categories-image-list">
+<?php foreach ($categoriesList as $category) : if( $category->getImage() ) : ?>
+        <li><a href="<?= $category->getUrl() ?>"><img alt="<?= $category->getName() ?>" src="<?= $baseUrl.$category->getImage() ?>"></a></li>
+<?php endif; endforeach ?>
+    </ul>
+<?php endif ?>
+<?php endif ?>

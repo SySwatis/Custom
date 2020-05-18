@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        
+        <referenceBlock name="content">
+
+            <block class="Magento\Framework\View\Element\Template" name="home-featured-category" template="Boeki_Custom::filter-list.phtml">
+
+                <block class="Boeki\Custom\Block\FilterList" name="catalog.product.filterlist.2" template="Magento_Catalog::product/list/items.phtml" after="-">
+                   <arguments>
+                        <argument name="title" xsi:type="string">Related Custom 2</argument>
+                    </arguments>
+                </block>
+                   
+                <block class="Boeki\Custom\Block\FilterList" name="catalog.product.filterlist.1" template="Magento_Catalog::product/list/items.phtml" after="-">
+                   <arguments>
+                        <argument name="title" xsi:type="string">Related Custom 1</argument>
+                        <argument name="data_attribute_filter" xsi:type="array">
+                             <item name="attribute" xsi:type="string">material</item>
+                        </argument>
+                    </arguments>
+                </block>
+
+                
+            </block>
+
+        </referenceBlock>
+       
+    </body>
+</page>

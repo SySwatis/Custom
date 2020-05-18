@@ -1,0 +1,11 @@
+
+<?php if($block->getStoreInformation()->getCity()) :?>
+	<span class="store-address"><p>
+		<!-- <?= $block->getStoreInformation()->getName() ?><br> -->
+		<span class="street-line1"><?= $block->getStoreInformation()->getData('street_line1') ?> </span>
+		<span class="street-line2"><?= $block->getStoreInformation()->getData('street_line2') ?></span>
+		<span class="post-code"><?= $block->getStoreInformation()->getPostcode() ?></span>
+		<span class="city"><?= $block->getStoreInformation()->getCity() ?></span>
+		<span class="phone-number"><?= $block->getStoreInformation()->getPhoneNumber() ?></span></p>
+		</span>
+<?php endif ?>

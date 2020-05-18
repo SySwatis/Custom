@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	 <body>
+	    
+	    <referenceBlock name="authorization-link">
+	        <action method="setTemplate">
+	            <argument name="custom-authorization" xsi:type="string">Boeki_Custom::authorization.phtml</argument>
+	        </action>
+	    </referenceBlock>
+	    <!-- remove create account -->
+	    <referenceBlock name="register-link" remove="true" />
+	    <!-- remove my account (login)  -->
+	    <referenceBlock name="my-account-link" remove="true" />
+
+	    <referenceContainer name="header.panel"> 
+			<block class="Boeki\Custom\Block\Custom" name="boeki-custom-preheader" after="-" template="Boeki_Custom::preheader.phtml">
+				<block class="Magento\Store\Block\Switcher" name="top.flags" as="top.flags" template="Magento_Store::switch/languages.phtml">
+                    <arguments>
+                        <argument name="id_modifier" xsi:type="string">nav</argument>
+                        <argument name="view_model" xsi:type="object">Magento\Store\ViewModel\SwitcherUrlProvider</argument>
+                    </arguments>
+                </block>
+            </block>
+	   	</referenceContainer>
+
+	    <referenceContainer name="footer-container">
+			<block class="Boeki\Custom\Block\Custom" name="boeki-custom-footer-address" template="Boeki_Custom::address.phtml" />
+	    </referenceContainer>
+
+   	</body>
+</page>
