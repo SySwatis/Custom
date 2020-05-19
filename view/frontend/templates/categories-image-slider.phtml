@@ -1,6 +1,7 @@
 <?php
 
   $categoriesList = $block->getCategories();
+  $sliderId = $block->getNameInLayout();
 
   if(count($categoriesList)) : 
 ?>
@@ -14,7 +15,7 @@
         <h2><?= __($blockTitle) ?></h2>
         <?php endif ?>
         <div class="content">
-            <ul>
+            <ul id="slider-<?= $sliderId ?>" >
             <?php foreach ($categoriesList as $category) : if($category->getImage()) : ?>
                 <li><a href="<?= $category->getUrl() ?>"><img alt="<?= $category->getName() ?>" src="<?= $baseUrl.$category->getImage() ?>"></a></li>
             <?php endif; 
@@ -38,16 +39,16 @@
         });
 
         $(document).ready(function () {
-            $('.brands-list').find('ul').slick({
-              dots: true,
-              infinite: false,
-              speed: 300,
-              slidesToShow: 8,
-              slidesToScroll: 8,
-              dots: false,
-              centerMode: false,
-              variableWidth: false,
-              responsive: [
+            $('#slider-<?= $sliderId ?>').slick({
+                dots: true,
+                infinite: false,
+                speed: 300,
+                slidesToShow: 8,
+                slidesToScroll: 8,
+                dots: false,
+                centerMode: false,
+                variableWidth: false,
+                responsive: [
                 {
                   breakpoint: 1024,
                   settings: {

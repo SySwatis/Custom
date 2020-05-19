@@ -15,11 +15,11 @@ class CategoriesList extends \Magento\Framework\View\Element\Template
     public function __construct(
         \Magento\Backend\Block\Template\Context $context,        
         \Magento\Store\Model\StoreManagerInterface $storeManager,
-       \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory $categoryCollection,
-       \Magento\Catalog\Model\CategoryRepository $categoryRepository,
-       \Magento\Catalog\Model\Category $categoryObject,
-       \Magento\Framework\Registry $registry,
-       \Magento\Framework\App\Request\Http $request,
+        \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory $categoryCollection,
+        \Magento\Catalog\Model\CategoryRepository $categoryRepository,
+        \Magento\Catalog\Model\Category $categoryObject,
+        \Magento\Framework\Registry $registry,
+        \Magento\Framework\App\Request\Http $request,
         array $data = []
     )
     {        
