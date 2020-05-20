@@ -7,14 +7,14 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 	 <body>
-<!-- 	 	<referenceContainer name="content">
-			<block class="Boeki\Custom\Block\CategoriesList" name="boeki-categories-list" template="Boeki_Custom::categories-image-slider.phtml" after='-'>
-                    <arguments>
-                        <argument name="category_id" xsi:type="string">3</argument>
-                        <argument name="limit" xsi:type="string">12</argument>
-                        <argument name="category_title" xsi:type="string">Our brands</argument>
-                    </arguments>
-                </block>
-       </referenceContainer> -->
+	 	<referenceContainer name="content">
+			<block class="Boeki\Custom\Block\CategoriesList" name="boeki-categories-image-slider" template="Boeki_Custom::categories-image-slider.phtml" after="-">
+                <arguments>
+                    <argument name="category_id" xsi:type="string">3</argument>
+                    <argument name="limit" xsi:type="string">12</argument>
+                    <argument name="category_title" xsi:type="string">Our brands</argument>
+                </arguments>
+            </block>
+       </referenceContainer>
 	 </body>
 </page>
